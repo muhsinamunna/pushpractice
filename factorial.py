@@ -6,5 +6,5 @@ def factorial(n):
 
 number=5
 result=factorial(number)
-print("the factorial of {number} is {result}.")
+print(f"the factorial of {number} is {result}.")
 print("test")
