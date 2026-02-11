@@ -26,3 +26,6 @@ jobs:
     
     - name: Run Shell script syntax check
       run: bash -n calculator.sh
+    - name: Debug Step
+      run: echo "Pipeline Triggered Successfully"
+
