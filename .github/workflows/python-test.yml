@@ -18,6 +18,28 @@ jobs:
       with:
         python-version: '3.9'
     
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+    
+    - name: Compile Java
+      run: javac Calculator.java
+    
+    - name: Run Java
+      run: java Calculator
+    
+    - name: Create JAR artifact
+      run: jar cfe Calculator.jar Calculator Calculator.class
+    
+    - name: Upload Java artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: java-calculator-artifact
+        path: Calculator.jar
+        retention-days: 30
+    
     - name: Check Python syntax
       run: python -m py_compile factorial.py
     
