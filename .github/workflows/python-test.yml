@@ -58,4 +58,7 @@ jobs:
       run: |
         echo "APP_NAME: $APP_NAME"
         echo "ENVIRONMENT: $ENVIRONMENT"
+    - name: Use Secret
+      run: echo "My secret is ${{ secrets.MY_SECRET_KEY }}"
+
 
