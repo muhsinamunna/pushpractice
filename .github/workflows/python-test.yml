@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  APP_NAME: CalculatorApp
+  ENVIRONMENT: dev
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -50,4 +54,8 @@ jobs:
       run: bash -n calculator.sh
     - name: Debug Step
       run: echo "Pipeline Triggered Successfully"
+    - name: Print env variables
+      run: |
+        echo "APP_NAME: $APP_NAME"
+        echo "ENVIRONMENT: $ENVIRONMENT"
 
